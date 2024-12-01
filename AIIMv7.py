@@ -92,9 +92,9 @@ class AIIM:
 
             # Se l'utente sta aggiungendo un ingrediente, raccogli le informazioni necessarie
             if "aggiungere ingrediente" in user_input.lower():
-                ingredient_name = st.text_input("Quale ingrediente vuoi aggiungere?")
-                expiry_date = st.text_input("Quando scade l'ingrediente? (YYYY-MM-DD)")
-                nutritional_info = st.text_input("Inserisci le informazioni nutrizionali:")
+                ingredient_name = st.text_input("Quale ingrediente vuoi aggiungere?", key="ingredient_name")
+                expiry_date = st.text_input("Quando scade l'ingrediente? (YYYY-MM-DD)", key="expiry_date")
+                nutritional_info = st.text_input("Inserisci le informazioni nutrizionali:", key="nutritional_info")
                 if ingredient_name and expiry_date and nutritional_info:
                     response = self.add_ingredients(ingredient_name, expiry_date, nutritional_info)
 
@@ -107,10 +107,6 @@ class AIIM:
                 st.markdown(f"**Tu:** {message['content']}")
             else:
                 st.markdown(f"**AIIM:** {message['content']}")
-
-if __name__ == "__main__":
-    aiim = AIIM()
-    aiim.run()
 
 if __name__ == "__main__":
     aiim = AIIM()
