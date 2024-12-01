@@ -111,3 +111,7 @@ class AIIM:
 if __name__ == "__main__":
     aiim = AIIM()
     aiim.run()
+
+if __name__ == "__main__":
+    aiim = AIIM()
+    aiim.run()
